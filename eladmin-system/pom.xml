@@ -86,6 +86,13 @@
             <artifactId>oshi-core</artifactId>
             <version>5.0.1</version>
         </dependency>
+        <!-- 热部署 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
     </dependencies>
 
     <!-- 打包 -->
@@ -94,6 +101,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork> <!--重要-->
+                </configuration>
             </plugin>
             <!-- 跳过单元测试 -->
             <plugin>
